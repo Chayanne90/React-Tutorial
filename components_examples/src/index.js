@@ -9,6 +9,8 @@ const App = () => {
 
         <div className="ui container comments">
             <CommentDetail />
+            <CommentDetail />
+            <CommentDetail />
         </div>
     );
 };
