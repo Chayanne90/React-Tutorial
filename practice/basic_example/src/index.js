@@ -1,11 +1,31 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
+import Navbar from './Navbar';
+import Hello from './Hello';
+
+const App = () => {
 
 
-const example = <h4>Hellos </h4>;
+    return (
+        <div className="navebar">
+            <Hello />
+            <Navbar />
+            
+        </div>
+
+    );
+
+};
 
 
-ReactDom.render(
-    example,
+
+
+
+ReactDOM.render(
+
+    <App />,
     document.querySelector('#root')
+
+    
+
 );
