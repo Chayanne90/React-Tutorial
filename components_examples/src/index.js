@@ -19,7 +19,6 @@ const App = () => {
                 img='https://source.unsplash.com/random'
                 />
             </ApprovalCard>
-
             
             <ApprovalCard>
                 <CommentDetail
@@ -29,7 +28,6 @@ const App = () => {
                 img='https://source.unsplash.com/random'
                 />
             </ApprovalCard>
-
        
             <ApprovalCard>
                 <CommentDetail 
@@ -39,8 +37,7 @@ const App = () => {
                 img='https://source.unsplash.com/random'
                 />
             </ApprovalCard>
-
-    
+  
         </div>
     );
 };
