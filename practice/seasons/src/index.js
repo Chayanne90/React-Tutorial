@@ -24,7 +24,7 @@ class App extends React.Component {
 
         // This is the only time you do the direct assignment
         // to this.state, becasue is inside the constructor method
-        this.state = { lat: null, long: null };
+        this.state = { lat: null, long: null, errorMsg: ''};
 
         window.navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -34,16 +34,34 @@ class App extends React.Component {
                 // DOT NOT DO THIS 
                 /* this.state.lat = position.coords.latitude */
             },
-            (err) => console.log(err)
+            (err) => {
+                this.setState({errorMsg: err.message});
+            }
         );
     }
 
     // render() is mandatory when crating a class component
     render() {
+        /* Conditionally Rendering */
+        if(this.state.errorMsg && !this.state.lat && !this.state.long ){
+            return <div>Error: {this.state.errorMsg}</div>
+        } 
+
+        if(!this.state.errorMsg && this.state.lat && this.state.long){
+            return (
+                <div>
+                    Latitude: {this.state.lat}
+                    <br />
+                    Longitude: {this.state.long}
+                </div>
+            );
         
-        return(
-            <div>Latitude: {this.state.lat} Llongitude: {this.state.long}</div>
-        );
+        }
+
+        return <div>Loading....</div>
+
+        
+    
     }
 }
 
