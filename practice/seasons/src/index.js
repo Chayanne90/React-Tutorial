@@ -26,17 +26,14 @@ class App extends React.Component {
         // to this.state, becasue is inside the constructor method
         this.state = { lat: null, long: null, errorMsg: ''};
 
-        window.navigator.geolocation.getCurrentPosition(
-            (position) => {
-                /* THIS IS HOW TO setState */
-                this.setState({ lat: position.coords.latitude, long: position.coords.longitude });
+    }
 
-                // DOT NOT DO THIS 
-                /* this.state.lat = position.coords.latitude */
-            },
-            (err) => {
-                this.setState({errorMsg: err.message});
-            }
+    componentDidMount() {
+        
+        window.navigator.geolocation.getCurrentPosition(
+
+            (position) => { this.setState({ lat: position.coords.latitude, long: position.coords.longitude })},
+            (err) => { this.setState({errorMsg: err.message}) }
         );
     }
 
@@ -58,7 +55,7 @@ class App extends React.Component {
         
         }
 
-        return <div>Loading....</div>
+        return <div>Loading</div>
 
         
     
