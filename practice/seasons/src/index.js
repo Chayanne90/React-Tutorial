@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import SeasonDisplay from './SeasonDisplay';
 
 
-/*
+/* function component
 const App = () => {
 
 
@@ -18,7 +19,7 @@ class App extends React.Component {
 
     /* This constructor method is the first one to be call
      every time an instance of the App comment is created 
-    */
+    
     constructor(props) {
         super(props);
 
@@ -26,8 +27,16 @@ class App extends React.Component {
         // to this.state, becasue is inside the constructor method
         this.state = { lat: null, long: null, errorMsg: ''};
 
-    }
+    }*/
 
+    /* Is not mandatory to inizialize a state! inside the 
+       constructor you also can do it here! in the body of
+       the class compoente*/
+    state = { lat: null, long: null, errorMsg: ''};
+
+
+    /* This  method is part of the components lifecycle.
+     Is very good to load data! */
     componentDidMount() {
         
         window.navigator.geolocation.getCurrentPosition(
@@ -40,19 +49,23 @@ class App extends React.Component {
     // render() is mandatory when crating a class component
     render() {
         /* Conditionally Rendering */
-        if(this.state.errorMsg && !this.state.lat && !this.state.long ){
+        if(this.state.errorMsg && !this.state.lat && !this.state.long ) { 
             return <div>Error: {this.state.errorMsg}</div>
         } 
 
-        if(!this.state.errorMsg && this.state.lat && this.state.long){
+        if(!this.state.errorMsg && this.state.lat && this.state.long) {
             return (
-                <div>
+
+                /*<div>
                     Latitude: {this.state.lat}
                     <br />
                     Longitude: {this.state.long}
+                </div>*/
+
+                <div>
+                    <SeasonDisplay lat = {this.state.lat}/>
                 </div>
             );
-        
         }
 
         return <div>Loading</div>
