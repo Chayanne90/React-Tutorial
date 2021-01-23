@@ -7,7 +7,6 @@ import Spinner from './Spinner';
 /* function component
 const App = () => {
 
-
     return (
         
         <div>Latitude:</div>
@@ -47,12 +46,13 @@ class App extends React.Component {
         );
     }
 
-    // render() is mandatory when crating a class component
-    render() {
+    renderContent() {
+
+
         /* Conditionally Rendering */
         if(this.state.errorMsg && !this.state.lat && !this.state.long ) { 
-            return <div>Error: {this.state.errorMsg}</div>
-        } 
+        return <div>Error: {this.state.errorMsg}</div>
+         } 
 
         if(!this.state.errorMsg && this.state.lat && this.state.long) {
             return (
@@ -70,7 +70,14 @@ class App extends React.Component {
         }
 
         return <Spinner msg="Please accept location request"/>
+    }
 
+    // render() is mandatory when crating a class component
+    render() {
+
+        return(
+            <div className="border-red"> {this.renderContent()} </div>
+        );
     }
 }
 
