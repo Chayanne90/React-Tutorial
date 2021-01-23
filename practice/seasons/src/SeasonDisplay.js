@@ -1,6 +1,8 @@
 import './seasonDisplay.css';
 import React from 'react';
 
+
+/* config objects */
 const seasonConfig = {
     Summer: {
         text: "Let's Hit The Beach",
@@ -12,6 +14,7 @@ const seasonConfig = {
     }
 }
 
+/* helper function */
 /* Get season base on what month you are currently are */
 const getSeason = (lat, month) => {    
 
@@ -22,8 +25,7 @@ const getSeason = (lat, month) => {
     }
 }
 
-/* season dispaly message  */
-
+/* season display message  */
 const SeasonDisplay = (props) => {
     const season = getSeason(props.lat, new Date().getMonth);
 
