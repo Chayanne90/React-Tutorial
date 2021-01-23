@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner';
 
 
 /* function component
@@ -68,10 +69,8 @@ class App extends React.Component {
             );
         }
 
-        return <div>Loading</div>
+        return <Spinner msg="Please accept location request"/>
 
-        
-    
     }
 }
 
