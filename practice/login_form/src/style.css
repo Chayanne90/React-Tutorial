@@ -1,0 +1,29 @@
+body {
+
+  background-color: #709DC2;
+}
+.container-sm {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 260px;
+  background-color: #709DC2;
+}
+
+.buttons {
+  margin-left: 17%;
+}
+
+.btn-login {
+
+  margin-right: 1rem;
+  background-color: #CF8415;
+  border-color: #CF8415;
+}
+
+.btn-login:hover {
+  
+  background-color: #CF8415;
+  border-color: #CF8415;
+}
