@@ -7,7 +7,7 @@ class SearchBar extends React.Component {
 
     onFormSubmit = (e) => {
         e.preventDefault();
-        
+
 
         /* this is how you use the props in a class componente using
         this.props.exmple */
@@ -19,7 +19,7 @@ class SearchBar extends React.Component {
     render() {
         return (
             <div className="ui segment">
-                <form onSubmit={(e)=>this.onFormSubmit(e)} className="ui form">
+                <form onSubmit={(e) => this.onFormSubmit(e)} className="ui form">
                     <div className="field">
                         <label>Image Search</label>
                         <input
